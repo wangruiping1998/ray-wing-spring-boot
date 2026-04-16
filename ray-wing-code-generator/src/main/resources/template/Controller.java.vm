@@ -1,0 +1,77 @@
+package ${package}.${moduleName}.controller;
+
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+import ${package}.web.core.domain.Result;
+import ${package}.web.core.util.ResultUtils
+import ${package}.${moduleName}.entity.${className}Entity;
+import ${package}.${moduleName}.service.${className}Service;
+
+import ${package}.web.core.domain.PageParam;
+
+
+/**
+ * ${comments}接口
+ *
+ * @author ${author}
+ * @since ${datetime}
+ */
+@RestController
+@RequestMapping("${pathName}")
+public class ${className}Controller {
+    @Autowired
+    private ${className}Service ${classname}Service;
+
+    /**
+     * 列表
+     */
+    @GetMapping
+    public Result<IPage<${className}Entity>> list(@RequestBody @Validated PageParam pageParam){
+        IPage<${className}Entity> page = ${classname}Service.page(pageParam);
+
+        return ResultUtils.success(page);
+    }
+
+    /**
+     * 信息
+     */
+    @GetMapping("{id}")
+    public Result<${className}Entity> info(@PathVariable("id") Long id){
+		${className}Entity ${classname} = ${classname}Service.getById(id);
+
+        return ResultUtils.success(${classname});
+    }
+
+    /**
+     * 保存
+     */
+    @PostMapping
+    public Result<Void> save(@RequestBody @Validated ${className}Entity ${classname}){
+		${classname}Service.save(${classname});
+
+        return ResultUtils.success();
+    }
+
+    /**
+     * 修改
+     */
+    @PutMapping
+    public Result<Void> update(@RequestBody @Validated ${className}Entity ${classname}){
+		${classname}Service.updateById(${classname});
+
+        return ResultUtils.success();
+    }
+
+    /**
+     * 删除
+     */
+    @DeleteMapping("{id}")
+    public Result<Void> delete(@PathVariable("id") Long id){
+		${classname}Service.removeById(id);
+
+        return ResultUtils.success();
+    }
+
+}

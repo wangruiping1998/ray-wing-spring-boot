@@ -1,0 +1,35 @@
+server:
+  port: 80
+
+spring:
+  datasource:
+    url: jdbc:postgresql://10.62.119.226:5437/ray_wing
+    username: postgres
+    password: wrp@PGatSMGI0601
+    hikari:
+      connection-timeout: 30000
+      idle-timeout: 30000
+      max-lifetime: 120000
+      maximum-pool-size: 32
+      minimum-idle: 8
+      auto-commit: true
+
+
+
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+
+mybatis-plus:
+  mapperLocations: classpath:mapper/**/*.xml
+  # 指定实体类的包路径，这样在 mapper 中就可以直接用类名，不用写全路径
+  type-aliases-package: cn.wangruiping.code.generator.entity
+  configuration:
+    # 开启驼峰命名自动映射，例如：数据库字段 user_name -> 实体属性 userName
+    map-underscore-to-camel-case: true
+
+
+#指定数据库，可选值有【mysql、oracle、sqlserver、postgresql、mongodb】
+renren:
+  database: postgresql
+

@@ -1,0 +1,29 @@
+package cn.wangruiping.web.core.domain;
+
+import cn.wangruiping.web.core.annotation.UpdateGroup;
+import com.baomidou.mybatisplus.annotation.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.validation.constraints.NotNull;
+import lombok.Data;
+
+import java.time.LocalDateTime;
+
+/**
+ * 基础实体类
+ * @author wrp
+ * @since 2025年07月04日 21:03
+ */
+@Data
+public class BaseEntity {
+    @NotNull(groups = UpdateGroup.class)
+    @TableId(type = IdType.ASSIGN_ID)
+    private Long id;
+    @TableField(fill = FieldFill.INSERT)
+    private LocalDateTime createTime;
+    @JsonIgnore
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    private LocalDateTime updateTime;
+    @TableLogic
+    @JsonIgnore
+    private Integer deleted;
+}
