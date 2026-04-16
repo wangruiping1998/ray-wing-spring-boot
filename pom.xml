@@ -17,7 +17,7 @@
   <modules>
 
     <module>ray-wing-user</module>
-      <module>ray-wing-code-generator</module>
+    <module>ray-wing-code-generator</module>
     <module>ray-wing-web-core</module>
   </modules>
 

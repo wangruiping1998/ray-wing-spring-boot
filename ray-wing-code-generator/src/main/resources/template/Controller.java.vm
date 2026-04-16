@@ -28,7 +28,7 @@ public class ${className}Controller {
      * 列表
      */
     @GetMapping
-    public Result<IPage<${className}Entity>> list(@RequestBody @Validated PageParam pageParam){
+    public Result<IPage<${className}Entity>> list(@Validated PageParam pageParam){
         IPage<${className}Entity> page = ${classname}Service.page(pageParam);
 
         return ResultUtils.success(page);

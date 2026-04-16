@@ -3,28 +3,21 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>cn.wangruiping</groupId>
-        <artifactId>ray-wing</artifactId>
+        <artifactId>ray-wing-user</artifactId>
         <version>${revision}</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>ray-wing-user</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>ray-wing-user-api</artifactId>
+    <packaging>jar</packaging>
 
-    <name>ray-wing-user</name>
-    <modules>
-        <module>ray-wing-user-db</module>
-        <module>ray-wing-user-api</module>
-    </modules>
+    <name>ray-wing-user-api</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>cn.wangruiping</groupId>
-            <artifactId>ray-wing-web-core</artifactId>
-        </dependency>
+
     </dependencies>
 </project>
