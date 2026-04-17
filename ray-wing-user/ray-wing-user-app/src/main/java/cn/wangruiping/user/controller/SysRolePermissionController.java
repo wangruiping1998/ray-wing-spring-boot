@@ -1,5 +1,7 @@
 package cn.wangruiping.user.controller;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+import io.swagger.v3.oas.annotations.Operation;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -8,6 +10,7 @@ import cn.wangruiping.web.core.domain.Result;
 import cn.wangruiping.web.core.util.ResultUtils;
 import cn.wangruiping.user.entity.SysRolePermissionEntity;
 import cn.wangruiping.user.service.SysRolePermissionService;
+
 import cn.wangruiping.web.core.domain.PageParam;
 
 
@@ -15,8 +18,9 @@ import cn.wangruiping.web.core.domain.PageParam;
  * 角色权限关联表接口
  *
  * @author wrp
- * @since 2026-04-16 16:06:24
+ * @since 2026-04-17 10:27:12
  */
+@Tag(name = "角色权限关联表接口")
 @RestController
 @RequestMapping("sys/role/permission")
 public class SysRolePermissionController {
@@ -26,6 +30,7 @@ public class SysRolePermissionController {
     /**
      * 列表
      */
+    @Operation(summary = "列表")
     @GetMapping
     public Result<IPage<SysRolePermissionEntity>> list(@Validated PageParam pageParam){
         IPage<SysRolePermissionEntity> page = sysRolePermissionService.page(pageParam);
@@ -36,6 +41,7 @@ public class SysRolePermissionController {
     /**
      * 信息
      */
+    @Operation(summary = "信息")
     @GetMapping("{id}")
     public Result<SysRolePermissionEntity> info(@PathVariable("id") Long id){
 		SysRolePermissionEntity sysRolePermission = sysRolePermissionService.getById(id);
@@ -46,6 +52,7 @@ public class SysRolePermissionController {
     /**
      * 保存
      */
+    @Operation(summary = "保存")
     @PostMapping
     public Result<Void> save(@RequestBody @Validated SysRolePermissionEntity sysRolePermission){
 		sysRolePermissionService.save(sysRolePermission);
@@ -56,6 +63,7 @@ public class SysRolePermissionController {
     /**
      * 修改
      */
+    @Operation(summary = "修改")
     @PutMapping
     public Result<Void> update(@RequestBody @Validated SysRolePermissionEntity sysRolePermission){
 		sysRolePermissionService.updateById(sysRolePermission);
@@ -66,6 +74,7 @@ public class SysRolePermissionController {
     /**
      * 删除
      */
+    @Operation(summary = "删除")
     @DeleteMapping("{id}")
     public Result<Void> delete(@PathVariable("id") Long id){
 		sysRolePermissionService.removeById(id);

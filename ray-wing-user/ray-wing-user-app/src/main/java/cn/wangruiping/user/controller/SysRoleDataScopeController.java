@@ -1,5 +1,7 @@
 package cn.wangruiping.user.controller;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+import io.swagger.v3.oas.annotations.Operation;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -8,6 +10,7 @@ import cn.wangruiping.web.core.domain.Result;
 import cn.wangruiping.web.core.util.ResultUtils;
 import cn.wangruiping.user.entity.SysRoleDataScopeEntity;
 import cn.wangruiping.user.service.SysRoleDataScopeService;
+
 import cn.wangruiping.web.core.domain.PageParam;
 
 
@@ -15,8 +18,9 @@ import cn.wangruiping.web.core.domain.PageParam;
  * 角色数据权限表接口
  *
  * @author wrp
- * @since 2026-04-16 16:06:24
+ * @since 2026-04-17 10:27:12
  */
+@Tag(name = "角色数据权限表接口")
 @RestController
 @RequestMapping("sys/role/data/scope")
 public class SysRoleDataScopeController {
@@ -26,6 +30,7 @@ public class SysRoleDataScopeController {
     /**
      * 列表
      */
+    @Operation(summary = "列表")
     @GetMapping
     public Result<IPage<SysRoleDataScopeEntity>> list(@Validated PageParam pageParam){
         IPage<SysRoleDataScopeEntity> page = sysRoleDataScopeService.page(pageParam);
@@ -36,6 +41,7 @@ public class SysRoleDataScopeController {
     /**
      * 信息
      */
+    @Operation(summary = "信息")
     @GetMapping("{id}")
     public Result<SysRoleDataScopeEntity> info(@PathVariable("id") Long id){
 		SysRoleDataScopeEntity sysRoleDataScope = sysRoleDataScopeService.getById(id);
@@ -46,6 +52,7 @@ public class SysRoleDataScopeController {
     /**
      * 保存
      */
+    @Operation(summary = "保存")
     @PostMapping
     public Result<Void> save(@RequestBody @Validated SysRoleDataScopeEntity sysRoleDataScope){
 		sysRoleDataScopeService.save(sysRoleDataScope);
@@ -56,6 +63,7 @@ public class SysRoleDataScopeController {
     /**
      * 修改
      */
+    @Operation(summary = "修改")
     @PutMapping
     public Result<Void> update(@RequestBody @Validated SysRoleDataScopeEntity sysRoleDataScope){
 		sysRoleDataScopeService.updateById(sysRoleDataScope);
@@ -66,6 +74,7 @@ public class SysRoleDataScopeController {
     /**
      * 删除
      */
+    @Operation(summary = "删除")
     @DeleteMapping("{id}")
     public Result<Void> delete(@PathVariable("id") Long id){
 		sysRoleDataScopeService.removeById(id);

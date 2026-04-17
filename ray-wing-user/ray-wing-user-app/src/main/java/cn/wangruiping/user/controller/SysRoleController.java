@@ -1,5 +1,7 @@
 package cn.wangruiping.user.controller;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+import io.swagger.v3.oas.annotations.Operation;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -8,6 +10,7 @@ import cn.wangruiping.web.core.domain.Result;
 import cn.wangruiping.web.core.util.ResultUtils;
 import cn.wangruiping.user.entity.SysRoleEntity;
 import cn.wangruiping.user.service.SysRoleService;
+
 import cn.wangruiping.web.core.domain.PageParam;
 
 
@@ -15,8 +18,9 @@ import cn.wangruiping.web.core.domain.PageParam;
  * 角色表接口
  *
  * @author wrp
- * @since 2026-04-16 16:06:24
+ * @since 2026-04-17 10:27:12
  */
+@Tag(name = "角色表接口")
 @RestController
 @RequestMapping("sys/role")
 public class SysRoleController {
@@ -26,6 +30,7 @@ public class SysRoleController {
     /**
      * 列表
      */
+    @Operation(summary = "列表")
     @GetMapping
     public Result<IPage<SysRoleEntity>> list(@Validated PageParam pageParam){
         IPage<SysRoleEntity> page = sysRoleService.page(pageParam);
@@ -36,6 +41,7 @@ public class SysRoleController {
     /**
      * 信息
      */
+    @Operation(summary = "信息")
     @GetMapping("{id}")
     public Result<SysRoleEntity> info(@PathVariable("id") Long id){
 		SysRoleEntity sysRole = sysRoleService.getById(id);
@@ -46,6 +52,7 @@ public class SysRoleController {
     /**
      * 保存
      */
+    @Operation(summary = "保存")
     @PostMapping
     public Result<Void> save(@RequestBody @Validated SysRoleEntity sysRole){
 		sysRoleService.save(sysRole);
@@ -56,6 +63,7 @@ public class SysRoleController {
     /**
      * 修改
      */
+    @Operation(summary = "修改")
     @PutMapping
     public Result<Void> update(@RequestBody @Validated SysRoleEntity sysRole){
 		sysRoleService.updateById(sysRole);
@@ -66,6 +74,7 @@ public class SysRoleController {
     /**
      * 删除
      */
+    @Operation(summary = "删除")
     @DeleteMapping("{id}")
     public Result<Void> delete(@PathVariable("id") Long id){
 		sysRoleService.removeById(id);

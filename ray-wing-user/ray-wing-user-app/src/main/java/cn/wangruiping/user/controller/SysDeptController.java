@@ -1,5 +1,7 @@
 package cn.wangruiping.user.controller;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+import io.swagger.v3.oas.annotations.Operation;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -16,8 +18,9 @@ import cn.wangruiping.web.core.domain.PageParam;
  * 部门表接口
  *
  * @author wrp
- * @since 2026-04-16 16:06:24
+ * @since 2026-04-17 10:27:12
  */
+@Tag(name = "部门表接口")
 @RestController
 @RequestMapping("sys/dept")
 public class SysDeptController {
@@ -27,6 +30,7 @@ public class SysDeptController {
     /**
      * 列表
      */
+    @Operation(summary = "列表")
     @GetMapping
     public Result<IPage<SysDeptEntity>> list(@Validated PageParam pageParam){
         IPage<SysDeptEntity> page = sysDeptService.page(pageParam);
@@ -37,6 +41,7 @@ public class SysDeptController {
     /**
      * 信息
      */
+    @Operation(summary = "信息")
     @GetMapping("{id}")
     public Result<SysDeptEntity> info(@PathVariable("id") Long id){
 		SysDeptEntity sysDept = sysDeptService.getById(id);
@@ -47,6 +52,7 @@ public class SysDeptController {
     /**
      * 保存
      */
+    @Operation(summary = "保存")
     @PostMapping
     public Result<Void> save(@RequestBody @Validated SysDeptEntity sysDept){
 		sysDeptService.save(sysDept);
@@ -57,6 +63,7 @@ public class SysDeptController {
     /**
      * 修改
      */
+    @Operation(summary = "修改")
     @PutMapping
     public Result<Void> update(@RequestBody @Validated SysDeptEntity sysDept){
 		sysDeptService.updateById(sysDept);
@@ -67,6 +74,7 @@ public class SysDeptController {
     /**
      * 删除
      */
+    @Operation(summary = "删除")
     @DeleteMapping("{id}")
     public Result<Void> delete(@PathVariable("id") Long id){
 		sysDeptService.removeById(id);
