@@ -1,7 +1,5 @@
-package cn.wangruiping.web.core.context;
+package cn.wangruiping.user.context;
 
-
-import org.apache.catalina.User;
 
 import java.lang.ScopedValue;
 import java.util.function.Supplier;

@@ -8,10 +8,10 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>ray-wing-user-db</artifactId>
+    <artifactId>ray-wing-user-app</artifactId>
     <packaging>jar</packaging>
 
-    <name>ray-wing-user-db</name>
+    <name>ray-wing-user-app</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

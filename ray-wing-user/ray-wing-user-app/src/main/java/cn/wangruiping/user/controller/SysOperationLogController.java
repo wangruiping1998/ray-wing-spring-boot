@@ -8,7 +8,6 @@ import cn.wangruiping.web.core.domain.Result;
 import cn.wangruiping.web.core.util.ResultUtils;
 import cn.wangruiping.user.entity.SysOperationLogEntity;
 import cn.wangruiping.user.service.SysOperationLogService;
-import java.util.List;
 import cn.wangruiping.web.core.domain.PageParam;
 
 

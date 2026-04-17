@@ -6,30 +6,29 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import cn.wangruiping.web.core.domain.Result;
 import cn.wangruiping.web.core.util.ResultUtils;
-import cn.wangruiping.user.entity.SysTenantEntity;
-import cn.wangruiping.user.service.SysTenantService;
-import java.util.List;
+import cn.wangruiping.user.entity.SysUserRoleEntity;
+import cn.wangruiping.user.service.SysUserRoleService;
 import cn.wangruiping.web.core.domain.PageParam;
 
 
 /**
- * 租户表接口
+ * 用户角色关联表接口
  *
  * @author wrp
  * @since 2026-04-16 16:06:24
  */
 @RestController
-@RequestMapping("sys/tenant")
-public class SysTenantController {
+@RequestMapping("sys/user/role")
+public class SysUserRoleController {
     @Autowired
-    private SysTenantService sysTenantService;
+    private SysUserRoleService sysUserRoleService;
 
     /**
      * 列表
      */
     @GetMapping
-    public Result<IPage<SysTenantEntity>> list(@Validated PageParam pageParam){
-        IPage<SysTenantEntity> page = sysTenantService.page(pageParam);
+    public Result<IPage<SysUserRoleEntity>> list(@Validated PageParam pageParam){
+        IPage<SysUserRoleEntity> page = sysUserRoleService.page(pageParam);
 
         return ResultUtils.success(page);
     }
@@ -38,18 +37,18 @@ public class SysTenantController {
      * 信息
      */
     @GetMapping("{id}")
-    public Result<SysTenantEntity> info(@PathVariable("id") Long id){
-		SysTenantEntity sysTenant = sysTenantService.getById(id);
+    public Result<SysUserRoleEntity> info(@PathVariable("id") Long id){
+		SysUserRoleEntity sysUserRole = sysUserRoleService.getById(id);
 
-        return ResultUtils.success(sysTenant);
+        return ResultUtils.success(sysUserRole);
     }
 
     /**
      * 保存
      */
     @PostMapping
-    public Result<Void> save(@RequestBody @Validated SysTenantEntity sysTenant){
-		sysTenantService.save(sysTenant);
+    public Result<Void> save(@RequestBody @Validated SysUserRoleEntity sysUserRole){
+		sysUserRoleService.save(sysUserRole);
 
         return ResultUtils.success();
     }
@@ -58,8 +57,8 @@ public class SysTenantController {
      * 修改
      */
     @PutMapping
-    public Result<Void> update(@RequestBody @Validated SysTenantEntity sysTenant){
-		sysTenantService.updateById(sysTenant);
+    public Result<Void> update(@RequestBody @Validated SysUserRoleEntity sysUserRole){
+		sysUserRoleService.updateById(sysUserRole);
 
         return ResultUtils.success();
     }
@@ -69,7 +68,7 @@ public class SysTenantController {
      */
     @DeleteMapping("{id}")
     public Result<Void> delete(@PathVariable("id") Long id){
-		sysTenantService.removeById(id);
+		sysUserRoleService.removeById(id);
 
         return ResultUtils.success();
     }

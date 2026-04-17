@@ -6,30 +6,29 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import cn.wangruiping.web.core.domain.Result;
 import cn.wangruiping.web.core.util.ResultUtils;
-import cn.wangruiping.user.entity.SysPermissionEntity;
-import cn.wangruiping.user.service.SysPermissionService;
-import java.util.List;
+import cn.wangruiping.user.entity.SysTenantEntity;
+import cn.wangruiping.user.service.SysTenantService;
 import cn.wangruiping.web.core.domain.PageParam;
 
 
 /**
- * 权限表接口
+ * 租户表接口
  *
  * @author wrp
  * @since 2026-04-16 16:06:24
  */
 @RestController
-@RequestMapping("sys/permission")
-public class SysPermissionController {
+@RequestMapping("sys/tenant")
+public class SysTenantController {
     @Autowired
-    private SysPermissionService sysPermissionService;
+    private SysTenantService sysTenantService;
 
     /**
      * 列表
      */
     @GetMapping
-    public Result<IPage<SysPermissionEntity>> list(@Validated PageParam pageParam){
-        IPage<SysPermissionEntity> page = sysPermissionService.page(pageParam);
+    public Result<IPage<SysTenantEntity>> list(@Validated PageParam pageParam){
+        IPage<SysTenantEntity> page = sysTenantService.page(pageParam);
 
         return ResultUtils.success(page);
     }
@@ -38,18 +37,18 @@ public class SysPermissionController {
      * 信息
      */
     @GetMapping("{id}")
-    public Result<SysPermissionEntity> info(@PathVariable("id") Long id){
-		SysPermissionEntity sysPermission = sysPermissionService.getById(id);
+    public Result<SysTenantEntity> info(@PathVariable("id") Long id){
+		SysTenantEntity sysTenant = sysTenantService.getById(id);
 
-        return ResultUtils.success(sysPermission);
+        return ResultUtils.success(sysTenant);
     }
 
     /**
      * 保存
      */
     @PostMapping
-    public Result<Void> save(@RequestBody @Validated SysPermissionEntity sysPermission){
-		sysPermissionService.save(sysPermission);
+    public Result<Void> save(@RequestBody @Validated SysTenantEntity sysTenant){
+		sysTenantService.save(sysTenant);
 
         return ResultUtils.success();
     }
@@ -58,8 +57,8 @@ public class SysPermissionController {
      * 修改
      */
     @PutMapping
-    public Result<Void> update(@RequestBody @Validated SysPermissionEntity sysPermission){
-		sysPermissionService.updateById(sysPermission);
+    public Result<Void> update(@RequestBody @Validated SysTenantEntity sysTenant){
+		sysTenantService.updateById(sysTenant);
 
         return ResultUtils.success();
     }
@@ -69,7 +68,7 @@ public class SysPermissionController {
      */
     @DeleteMapping("{id}")
     public Result<Void> delete(@PathVariable("id") Long id){
-		sysPermissionService.removeById(id);
+		sysTenantService.removeById(id);
 
         return ResultUtils.success();
     }

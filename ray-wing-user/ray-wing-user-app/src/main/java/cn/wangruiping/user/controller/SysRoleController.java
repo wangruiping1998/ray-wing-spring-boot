@@ -6,30 +6,29 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import cn.wangruiping.web.core.domain.Result;
 import cn.wangruiping.web.core.util.ResultUtils;
-import cn.wangruiping.user.entity.SysUserRoleEntity;
-import cn.wangruiping.user.service.SysUserRoleService;
-import java.util.List;
+import cn.wangruiping.user.entity.SysRoleEntity;
+import cn.wangruiping.user.service.SysRoleService;
 import cn.wangruiping.web.core.domain.PageParam;
 
 
 /**
- * 用户角色关联表接口
+ * 角色表接口
  *
  * @author wrp
  * @since 2026-04-16 16:06:24
  */
 @RestController
-@RequestMapping("sys/user/role")
-public class SysUserRoleController {
+@RequestMapping("sys/role")
+public class SysRoleController {
     @Autowired
-    private SysUserRoleService sysUserRoleService;
+    private SysRoleService sysRoleService;
 
     /**
      * 列表
      */
     @GetMapping
-    public Result<IPage<SysUserRoleEntity>> list(@Validated PageParam pageParam){
-        IPage<SysUserRoleEntity> page = sysUserRoleService.page(pageParam);
+    public Result<IPage<SysRoleEntity>> list(@Validated PageParam pageParam){
+        IPage<SysRoleEntity> page = sysRoleService.page(pageParam);
 
         return ResultUtils.success(page);
     }
@@ -38,18 +37,18 @@ public class SysUserRoleController {
      * 信息
      */
     @GetMapping("{id}")
-    public Result<SysUserRoleEntity> info(@PathVariable("id") Long id){
-		SysUserRoleEntity sysUserRole = sysUserRoleService.getById(id);
+    public Result<SysRoleEntity> info(@PathVariable("id") Long id){
+		SysRoleEntity sysRole = sysRoleService.getById(id);
 
-        return ResultUtils.success(sysUserRole);
+        return ResultUtils.success(sysRole);
     }
 
     /**
      * 保存
      */
     @PostMapping
-    public Result<Void> save(@RequestBody @Validated SysUserRoleEntity sysUserRole){
-		sysUserRoleService.save(sysUserRole);
+    public Result<Void> save(@RequestBody @Validated SysRoleEntity sysRole){
+		sysRoleService.save(sysRole);
 
         return ResultUtils.success();
     }
@@ -58,8 +57,8 @@ public class SysUserRoleController {
      * 修改
      */
     @PutMapping
-    public Result<Void> update(@RequestBody @Validated SysUserRoleEntity sysUserRole){
-		sysUserRoleService.updateById(sysUserRole);
+    public Result<Void> update(@RequestBody @Validated SysRoleEntity sysRole){
+		sysRoleService.updateById(sysRole);
 
         return ResultUtils.success();
     }
@@ -69,7 +68,7 @@ public class SysUserRoleController {
      */
     @DeleteMapping("{id}")
     public Result<Void> delete(@PathVariable("id") Long id){
-		sysUserRoleService.removeById(id);
+		sysRoleService.removeById(id);
 
         return ResultUtils.success();
     }

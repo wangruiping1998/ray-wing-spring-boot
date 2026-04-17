@@ -13,8 +13,8 @@
 
     <name>ray-wing-user</name>
     <modules>
-        <module>ray-wing-user-db</module>
         <module>ray-wing-user-api</module>
+        <module>ray-wing-user-app</module>
     </modules>
 
     <properties>

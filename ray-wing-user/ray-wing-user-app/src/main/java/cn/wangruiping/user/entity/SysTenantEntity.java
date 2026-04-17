@@ -9,6 +9,8 @@ import cn.wangruiping.web.core.domain.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.time.LocalDateTime;
+
 /**
  * 租户表
  * 

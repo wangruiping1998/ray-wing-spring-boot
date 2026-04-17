@@ -1,4 +1,4 @@
-package cn.wangruiping.web.core.context;
+package cn.wangruiping.user.context;
 
 import lombok.Data;
 
