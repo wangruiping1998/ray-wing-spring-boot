@@ -23,32 +23,32 @@ public class SysRoleEntity extends BaseEntity {
 	/**
 	 * 租户ID
 	 */
-	@Schema(name = "租户ID")
+	@Schema(title = "租户ID")
     private Long tenantId;
 	/**
 	 * 角色编码
 	 */
-	@Schema(name = "角色编码")
+	@Schema(title = "角色编码")
     private String roleCode;
 	/**
 	 * 角色名称
 	 */
-	@Schema(name = "角色名称")
+	@Schema(title = "角色名称")
     private String roleName;
 	/**
 	 * 角色描述
 	 */
-	@Schema(name = "角色描述")
+	@Schema(title = "角色描述")
     private String description;
 	/**
 	 * 排序
 	 */
-	@Schema(name = "排序")
+	@Schema(title = "排序")
     private Integer sort;
 	/**
 	 * 状态：0-禁用 1-启用
 	 */
-	@Schema(name = "状态：0-禁用 1-启用")
+	@Schema(title = "状态：0-禁用 1-启用")
     private Integer status;
 
 }

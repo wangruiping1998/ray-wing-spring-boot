@@ -25,32 +25,32 @@ public class SysTenantEntity extends BaseEntity {
 	/**
 	 * 租户编码
 	 */
-	@Schema(name = "租户编码")
+	@Schema(title = "租户编码")
     private String tenantCode;
 	/**
 	 * 租户名称
 	 */
-	@Schema(name = "租户名称")
+	@Schema(title = "租户名称")
     private String tenantName;
 	/**
 	 * 联系人
 	 */
-	@Schema(name = "联系人")
+	@Schema(title = "联系人")
     private String contactName;
 	/**
 	 * 联系电话
 	 */
-	@Schema(name = "联系电话")
+	@Schema(title = "联系电话")
     private String contactPhone;
 	/**
 	 * 状态：0-禁用 1-启用
 	 */
-	@Schema(name = "状态：0-禁用 1-启用")
+	@Schema(title = "状态：0-禁用 1-启用")
     private Integer status;
 	/**
 	 * 过期时间
 	 */
-	@Schema(name = "过期时间")
+	@Schema(title = "过期时间")
     private LocalDateTime expireTime;
 
 }

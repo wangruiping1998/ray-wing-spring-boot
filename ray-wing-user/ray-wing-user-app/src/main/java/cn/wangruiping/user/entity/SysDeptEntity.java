@@ -23,42 +23,42 @@ public class SysDeptEntity extends BaseEntity {
 	/**
 	 * 租户ID
 	 */
-	@Schema(name = "租户ID")
+	@Schema(title = "租户ID")
     private Long tenantId;
 	/**
 	 * 父部门ID
 	 */
-	@Schema(name = "父部门ID")
+	@Schema(title = "父部门ID")
     private Long parentId;
 	/**
 	 * 部门名称
 	 */
-	@Schema(name = "部门名称")
+	@Schema(title = "部门名称")
     private String deptName;
 	/**
 	 * 部门编码
 	 */
-	@Schema(name = "部门编码")
+	@Schema(title = "部门编码")
     private String deptCode;
 	/**
 	 * 负责人
 	 */
-	@Schema(name = "负责人")
+	@Schema(title = "负责人")
     private String leader;
 	/**
 	 * 联系电话
 	 */
-	@Schema(name = "联系电话")
+	@Schema(title = "联系电话")
     private String phone;
 	/**
 	 * 排序
 	 */
-	@Schema(name = "排序")
+	@Schema(title = "排序")
     private Integer sort;
 	/**
 	 * 状态：0-禁用 1-启用
 	 */
-	@Schema(name = "状态：0-禁用 1-启用")
+	@Schema(title = "状态：0-禁用 1-启用")
     private Integer status;
 
 }

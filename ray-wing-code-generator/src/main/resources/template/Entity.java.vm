@@ -33,7 +33,7 @@ public class ${className}Entity extends BaseEntity {
 	#if($column.columnName == $pk.columnName)
     @TableId
 	#end
-@Schema(name = "$column.comments")
+@Schema(title = "$column.comments")
     private $column.attrType $column.attrname;
 #end
 

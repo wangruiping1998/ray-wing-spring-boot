@@ -23,17 +23,17 @@ public class SysUserRoleEntity extends BaseEntity {
 	/**
 	 * 租户ID
 	 */
-	@Schema(name = "租户ID")
+	@Schema(title = "租户ID")
     private Long tenantId;
 	/**
 	 * 用户ID
 	 */
-	@Schema(name = "用户ID")
+	@Schema(title = "用户ID")
     private Long userId;
 	/**
 	 * 角色ID
 	 */
-	@Schema(name = "角色ID")
+	@Schema(title = "角色ID")
     private Long roleId;
 
 }

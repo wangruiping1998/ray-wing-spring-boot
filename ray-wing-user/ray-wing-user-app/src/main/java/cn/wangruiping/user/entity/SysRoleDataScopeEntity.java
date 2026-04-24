@@ -23,17 +23,17 @@ public class SysRoleDataScopeEntity extends BaseEntity {
 	/**
 	 * 租户ID
 	 */
-	@Schema(name = "租户ID")
+	@Schema(title = "租户ID")
     private Long tenantId;
 	/**
 	 * 角色ID
 	 */
-	@Schema(name = "角色ID")
+	@Schema(title = "角色ID")
     private Long roleId;
 	/**
 	 * 数据范围：1-全部 2-本部门 3-本部门及子部门 4-仅本人 5-自定义
 	 */
-	@Schema(name = "数据范围：1-全部 2-本部门 3-本部门及子部门 4-仅本人 5-自定义")
+	@Schema(title = "数据范围：1-全部 2-本部门 3-本部门及子部门 4-仅本人 5-自定义")
     private Integer dataScope;
 
 }
