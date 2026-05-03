@@ -1,17 +1,16 @@
 package cn.wangruiping.user.controller;
 
-import io.swagger.v3.oas.annotations.tags.Tag;
-import io.swagger.v3.oas.annotations.Operation;
+import cn.wangruiping.user.entity.SysUserEntity;
+import cn.wangruiping.user.service.SysUserService;
+import cn.wangruiping.web.core.domain.PageParam;
+import cn.wangruiping.web.core.domain.Result;
+import cn.wangruiping.web.core.util.ResultUtils;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import cn.wangruiping.web.core.domain.Result;
-import cn.wangruiping.web.core.util.ResultUtils;
-import cn.wangruiping.user.entity.SysUserEntity;
-import cn.wangruiping.user.service.SysUserService;
-
-import cn.wangruiping.web.core.domain.PageParam;
 
 
 /**

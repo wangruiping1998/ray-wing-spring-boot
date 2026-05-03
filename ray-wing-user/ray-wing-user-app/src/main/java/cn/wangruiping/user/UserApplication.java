@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication(scanBasePackages = "cn.wangruiping")
 public class UserApplication {
 
-    static void main(String[] args) {
+    public static void main(String[] args) {
         SpringApplication.run(UserApplication.class, args);
     }
 }
